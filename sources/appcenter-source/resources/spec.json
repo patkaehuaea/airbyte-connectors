@@ -1,0 +1,39 @@
+{
+  "documentationUrl": "https://appcenter.ms",
+  "connectionSpecification": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Microsoft App Center source spec",
+    "type": "object",
+    "required": ["owner_name", "app_name", "token"],
+    "additionalProperties": true,
+    "properties": {
+      "owner_name": {
+        "order": 1,
+        "type": "string",
+        "title": "owner_name",
+        "description": "The name of the owner",
+        "examples": ["https://appcenter.ms/users/{owner-name}/apps/{app-name}"]
+      },
+      "app_name": {
+        "order": 2,
+        "type": "string",
+        "title": "app_name",
+        "description": "The name of the application",
+        "examples": ["https://appcenter.ms/users/{owner-name}/apps/{app-name}"]
+      },
+      "token": {
+        "order": 3,
+        "type": "string",
+        "title": "token",
+        "airbyte_secret": true
+      },
+      "top_releases": {
+        "order": 4,
+        "type": "integer",
+        "title": "top_releases",
+        "description": "The number of releases to return",
+        "examples": [7]
+      }
+    }
+  }
+}
